@@ -7,7 +7,7 @@ ob_start();
 
 <!-- End coding -->
 <?php 
-$title   = "Page d'accueil";
+$title   = "Liste des livres"; 
 $content = ob_get_clean();
 require "template.php"; 
 ?>
