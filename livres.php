@@ -6,7 +6,12 @@ $book2 = new Book(2, "Le virus asiatique", 200, "virus.png");
 $book3 = new Book(3, "La france du 19ieme", 100, "france.png");
 $book4 = new Book(4, "algorithmique selon H2PROG", 500, "JS.png");
 
-$books = [$book1, $book2, $book3, $book4];
+require "BookManager.class.php"; 
+$bookManager = new BookManager;
+$bookManager->addBook($book1);
+$bookManager->addBook($book2);
+$bookManager->addBook($book3);
+$bookManager->addBook($book4);
 
 ob_start();
 ?>
@@ -21,12 +26,13 @@ ob_start();
     </tr>
 
     <?php
-    foreach ($books as $book => $value) {
+
+    foreach ($bookManager->getBooks() as $book) {
     ?>
         <tr>
-            <td class="align-middle"><img src="public/images/<?= $value->getImage() ?>" width="60px;" /></td>
-            <td class="align-middle"><?= $value->getTitle() ?></td>
-            <td class="align-middle"><?= $value->getnbPages() ?></td>
+            <td class="align-middle"><img src="public/images/<?= $book->getImage() ?>" width="60px;" /></td>
+            <td class="align-middle"><?= $book->getTitle() ?></td>
+            <td class="align-middle"><?= $book->getnbPages() ?></td>
             <td class="align-middle"> <a href="" class="btn btn-warning"> Modifier</a> </td>
             <td class="align-middle"> <a href="" class="btn btn-danger"> Supprimer</a> </td>
         </tr>
