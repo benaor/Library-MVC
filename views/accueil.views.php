@@ -13,5 +13,5 @@ ob_start();
 <?php 
 $title   = "Page d'accueil";
 $content = ob_get_clean();
-require "template.php"; 
+require "../template.php"; 
 ?>
