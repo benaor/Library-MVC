@@ -11,7 +11,7 @@ if (empty($_GET['page'])) {
             require "../views/accueil.view.php";
             break;
         case "livres":
-            require $bookController->showBooks();
+            $bookController->showBooks();
             break;
     }
 }

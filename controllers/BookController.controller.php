@@ -11,8 +11,9 @@ class BookController
         $this->bookManager->loadBooks();
     }
 
-    public function showBooks() {
+    public function showBooks()
+    {
         $books = $this->bookManager->getBooks();
-        require "../views/livres.view.php"; 
+        require "../views/livres.view.php";
     }
 }
