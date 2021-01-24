@@ -1,17 +1,8 @@
 <?php
 
-require_once "Book.class.php";
-$book1 = new Book(1, "algorithmique selon H2PROG", 300, "algo.png");
-$book2 = new Book(2, "Le virus asiatique", 200, "virus.png");
-$book3 = new Book(3, "La france du 19ieme", 100, "france.png");
-$book4 = new Book(4, "algorithmique selon H2PROG", 500, "JS.png");
-
 require "BookManager.class.php"; 
 $bookManager = new BookManager;
-$bookManager->addBook($book1);
-$bookManager->addBook($book2);
-$bookManager->addBook($book3);
-$bookManager->addBook($book4);
+$bookManager->loadBooks();
 
 ob_start();
 ?>
@@ -28,6 +19,7 @@ ob_start();
     <?php
 
     foreach ($bookManager->getBooks() as $book) {
+
     ?>
         <tr>
             <td class="align-middle"><img src="public/images/<?= $book->getImage() ?>" width="60px;" /></td>
