@@ -17,10 +17,10 @@
         <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php">Accueil</a>
+                    <a class="nav-link" href="accueil">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="livres.php">Livres</a>
+                    <a class="nav-link" href="livres">Livres</a>
                 </li>
         </div>
     </nav>

@@ -1,11 +1,4 @@
-<?php
-
-require "BookManager.class.php"; 
-$bookManager = new BookManager;
-$bookManager->loadBooks();
-
-ob_start();
-?>
+<?php ob_start(); ?>
 <!-- Start coding -->
 
 <table class="table text-center">
@@ -17,12 +10,10 @@ ob_start();
     </tr>
 
     <?php
-
-    foreach ($bookManager->getBooks() as $book) {
-
+    foreach ($books as $book) {
     ?>
         <tr>
-            <td class="align-middle"><img src="public/images/<?= $book->getImage() ?>" width="60px;" /></td>
+            <td class="align-middle"><img src="../public/images/<?= $book->getImage() ?>" width="60px;" /></td>
             <td class="align-middle"><?= $book->getTitle() ?></td>
             <td class="align-middle"><?= $book->getnbPages() ?></td>
             <td class="align-middle"> <a href="" class="btn btn-warning"> Modifier</a> </td>
@@ -37,5 +28,5 @@ ob_start();
 <?php
 $title   = "Liste des livres";
 $content = ob_get_clean();
-require "template.php";
+require "template.view.php";
 ?>

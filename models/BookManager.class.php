@@ -1,6 +1,6 @@
 <?php
-require_once "Model.class.php";
-require_once "Book.class.php";
+require_once "../models/Model.class.php";
+require_once "../models/Book.class.php";
 
 class BookManager extends Model{
     private $books; 

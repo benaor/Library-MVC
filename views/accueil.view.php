@@ -1,7 +1,4 @@
-<?php 
-ob_start();
-?>
-
+<?php ob_start(); ?>
 <!-- Start coding -->
 
 
@@ -9,9 +6,8 @@ ob_start();
 
 
 <!-- End coding -->
-
 <?php 
 $title   = "Page d'accueil";
 $content = ob_get_clean();
-require "../template.php"; 
+require "template.view.php"; 
 ?>
