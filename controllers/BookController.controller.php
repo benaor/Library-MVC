@@ -16,4 +16,5 @@ class BookController
         $books = $this->bookManager->getBooks();
         require "../views/livres.view.php";
     }
+
 }
