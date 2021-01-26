@@ -17,4 +17,8 @@ class BookController
         require "../views/livres.view.php";
     }
 
+    public function showBook($id){
+        $book = $this->bookManager->getBookById($id);
+        require "../views/showBook.view.php";
+    }
 }

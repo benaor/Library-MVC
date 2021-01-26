@@ -24,4 +24,12 @@ class BookManager extends Model{
             $this->addBook($b);
         }
     }
+
+    public function getBookById($id){
+        foreach($this->books as $book){
+            if($book->getId() === $id ){
+                return $book;
+            }
+        }
+    }
 }

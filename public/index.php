@@ -19,7 +19,7 @@ try {
                 } else {
                     switch ($url[1]) {
                         case 'show':
-                            $bookController->showBook($url[2]); // Need create the method
+                            $bookController->showBook($url[2]);
                             break;
                         case 'add':
                             echo "Page d'ajout";
