@@ -24,7 +24,7 @@
     <?php } ?>
 </table>
 
-<a href="" class="btn btn-success d-block">Ajouter</a>
+<a href="<?= URL ?>livres/add" class="btn btn-success d-block">Ajouter</a>
 
 <!-- End coding -->
 <?php

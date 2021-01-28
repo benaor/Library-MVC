@@ -32,4 +32,23 @@ class BookManager extends Model{
             }
         }
     }
+
+    public function addBookInDataBase($title, $nbPages, $image){
+
+        $req = "INSERT INTO books (title, nbPages, image) VALUES (:title, :nbPages, :image)";
+
+        $stmt = $this->getBdd()->prepare($req); 
+        $stmt->bindValue(":title", $title, PDO::PARAM_STR);
+        $stmt->bindValue(":nbPages", $nbPages, PDO::PARAM_STR);
+        $stmt->bindValue(":image", $image, PDO::PARAM_STR);
+
+        $resultat = $stmt->execute();
+
+        $stmt->closeCursor(); 
+
+        if($resultat > 0){
+            $book = new Book($this->getBdd()->lastInsertId(), $title, $nbPages, $image); 
+            $this->addBook($book);
+        }
+    }
 }

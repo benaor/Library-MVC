@@ -22,13 +22,16 @@ try {
                             $bookController->showBook($url[2]);
                             break;
                         case 'add':
-                            echo "Page d'ajout";
+                            $bookController->addBook();
                             break;
                         case 'edit':
                             echo "Page de modification";
                             break;
                         case 'delete':
                             echo "Page de suppression";
+                            break;
+                        case 'validation':
+                            $bookController->addBookValidation(); 
                             break;
                         default:
                             throw new Exception("404 NOT FOUND, PARAMETER INVALID");
